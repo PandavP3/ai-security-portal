@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,7 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				neonBlue: '#00ffff',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +86,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				neonPulse: {
+					'0%, 100%': { 
+						textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #00ffff, 0 0 82px #00ffff, 0 0 92px #00ffff, 0 0 102px #00ffff, 0 0 151px #00ffff' 
+					},
+					'50%': { 
+						textShadow: '0 0 4px #fff, 0 0 7px #fff, 0 0 15px #fff, 0 0 25px #00ffff, 0 0 65px #00ffff, 0 0 75px #00ffff, 0 0 85px #00ffff, 0 0 135px #00ffff' 
+					}
+				},
+				fadeIn: {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neonPulse 2s ease-in-out infinite',
+				'fade-in': 'fadeIn 1s ease-in-out forwards'
 			}
 		}
 	},
